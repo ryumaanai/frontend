@@ -5,7 +5,7 @@ export default function Home() {
   const [name, setName] = useState("");
 
   const save = async () => {
-    await fetch("http://localhost:8080/api/items", {
+    await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/items`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ name }),
